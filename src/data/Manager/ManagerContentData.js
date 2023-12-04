@@ -19,7 +19,6 @@ export const zSidebar = [
         sidebarObjListFormat('댓글관리', '/manager/list/comment', 40, ['/manager/list/comment']),//edit
     ], <AiTwotoneSetting />),
     sidebarContentFormat('기본설정', [
-        //sidebarObjListFormat('상단띠배너', '/manager/edit/common_setting/1', 40, ['/manager/edit/common_setting/1']),//list
         sidebarObjListFormat('메인배너', '/manager/edit/home_setting/1', 40, ['/manager/edit/home_setting/1']),//list
         sidebarObjListFormat('메인페이지세팅', '/manager/edit/main_setting/1', 40, ['/manager/edit/main_setting/1']),//list
         sidebarObjListFormat('메타세팅', '/manager/edit/meta_setting/1', 40, ['/manager/edit/meta_setting/1']),//
@@ -27,8 +26,6 @@ export const zSidebar = [
     ], <AiTwotoneSetting />),
     sidebarContentFormat('지역관리', [
         sidebarObjListFormat('도시관리', '/manager/list/city', 40, ['/manager/list/city']),//list
-        //sidebarObjListFormat('메인배너', '/manager/edit/home_setting/1', 40, ['/manager/edit/home_setting/1']),//list
-        //sidebarObjListFormat('팝업관리', '/manager/list/popup', 40, ['/manager/list/popup']),//list
     ], <AiTwotoneSetting />),
     sidebarContentFormat('업체관리', [
         sidebarObjListFormat('국가관리', '/manager/list/shop_country', 40, ['/manager/list/shop_country']),//list
@@ -37,20 +34,23 @@ export const zSidebar = [
         sidebarObjListFormat('업체관리', '/manager/list/shop', 40, ['/manager/list/shop']),//list
     ], <AiTwotoneSetting />),
     sidebarContentFormat('관리자게시판관리', [
-        sidebarObjListFormat('문의관리', '/manager/list/request', 40, ['/manager/list/request']),//list
-        sidebarObjListFormat('FAQ관리', '/manager/list/faq', 40, ['/manager/list/faq']),//list
         sidebarObjListFormat('공지사항', '/manager/list/notice', 40, ['/manager/list/notice']),//list
+        sidebarObjListFormat('FAQ관리', '/manager/list/faq', 40, ['/manager/list/faq']),//list
+        sidebarObjListFormat('이벤트', '/manager/list/event', 40, ['/manager/list/event']),//list
+        sidebarObjListFormat('문의관리', '/manager/list/request', 40, ['/manager/list/request']),//list
+        sidebarObjListFormat('공식블로그', '/manager/list/blog', 40, ['/manager/list/blog']),//list
+
     ], <AiTwotoneSetting />),
     sidebarContentFormat('유저게시판관리', [
         sidebarObjListFormat('자유게시판', '/manager/list/freeboard', 40, ['/manager/list/freeboard']),//list
-        sidebarObjListFormat('질문게시판', '/manager/list/question', 40, ['/manager/list/question']),//list
-        sidebarObjListFormat('유머게시판', '/manager/list/humor', 40, ['/manager/list/humor']),//list
-        sidebarObjListFormat('마사지소식', '/manager/list/news', 40, ['/manager/list/news']),//list
-        sidebarObjListFormat('파티모집', '/manager/list/party', 40, ['/manager/list/party']),//list
+        sidebarObjListFormat('익명게시판', '/manager/list/anonymous', 40, ['/manager/list/anonymous']),//list
+        sidebarObjListFormat('가입인사', '/manager/list/greeting', 40, ['/manager/list/greeting']),//list
+        sidebarObjListFormat('창업교육', '/manager/list/education', 40, ['/manager/list/education']),//list
     ], <AiTwotoneSetting />),
     sidebarContentFormat('업체게시판관리', [
-        sidebarObjListFormat('업체후기', '/manager/list/shop_review', 40, ['/manager/list/shop_review']),//list
-        sidebarObjListFormat('업체이벤트', '/manager/list/shop_event', 40, ['/manager/list/shop_event']),//list
+        sidebarObjListFormat('방문후기', '/manager/list/shop_review', 40, ['/manager/list/shop_review']),//list
+        sidebarObjListFormat('구인구직', '/manager/list/shop_offer', 40, ['/manager/list/shop_offer']),//list
+        sidebarObjListFormat('샵매매', '/manager/list/shop_trade', 40, ['/manager/list/shop_trade']),//list
     ], <AiTwotoneSetting />),
 ];
 
@@ -193,21 +193,24 @@ export const objManagerListContent = {
         [],
         false,
         false),
-    request: sidebarObjFormat(
-        '문의 관리',
-        'request',
+
+
+    notice: sidebarObjFormat(
+        '공지 관리',
+        'notice',
         [
-            columnObjFormat('문의자아이디', '', 'text', 'id'),
-            columnObjFormat('문의자닉네임', '', 'text', 'nickname'),
+            columnObjFormat('메인이미지', '', 'img', 'main_img'),
             columnObjFormat('제목', '', 'text', 'title'),
-            columnObjFormat('확인여부', '', 'request_status', 'request_status'),
-            columnObjFormat('문의날짜', '', 'text', 'date'),
+            columnObjFormat('작성자', '', 'text', 'nickname'),
+            columnObjFormat('등록일', '', 'text', 'date'),
+            columnObjFormat('맨위로', '', 'top', 'top'),
+            columnObjFormat('노출여부', '', 'status', 'status'),
             columnObjFormat('수정', '', 'edit', 'edit'),
             columnObjFormat('삭제', '', 'delete', 'delete'),
         ],
         [],
-        false,
-        false),
+        true,
+        true),
     faq: sidebarObjFormat(
         'FAQ 관리',
         'faq',
@@ -223,9 +226,40 @@ export const objManagerListContent = {
         [],
         true,
         true),
-    notice: sidebarObjFormat(
-        '공지 관리',
-        'notice',
+    event: sidebarObjFormat(
+        '이벤트 관리',
+        'event',
+        [
+            columnObjFormat('메인이미지', '', 'img', 'main_img'),
+            columnObjFormat('제목', '', 'text', 'title'),
+            columnObjFormat('작성자', '', 'text', 'nickname'),
+            columnObjFormat('등록일', '', 'text', 'date'),
+            columnObjFormat('맨위로', '', 'top', 'top'),
+            columnObjFormat('노출여부', '', 'status', 'status'),
+            columnObjFormat('수정', '', 'edit', 'edit'),
+            columnObjFormat('삭제', '', 'delete', 'delete'),
+        ],
+        [],
+        true,
+        true),
+    request: sidebarObjFormat(
+        '문의 관리',
+        'request',
+        [
+            columnObjFormat('문의자아이디', '', 'text', 'id'),
+            columnObjFormat('문의자닉네임', '', 'text', 'nickname'),
+            columnObjFormat('제목', '', 'text', 'title'),
+            columnObjFormat('확인여부', '', 'request_status', 'request_status'),
+            columnObjFormat('문의날짜', '', 'text', 'date'),
+            columnObjFormat('수정', '', 'edit', 'edit'),
+            columnObjFormat('삭제', '', 'delete', 'delete'),
+        ],
+        [],
+        false,
+        false),
+    blog: sidebarObjFormat(
+        '공식블로그 관리',
+        'blog',
         [
             columnObjFormat('메인이미지', '', 'img', 'main_img'),
             columnObjFormat('제목', '', 'text', 'title'),
@@ -255,9 +289,9 @@ export const objManagerListContent = {
         [],
         true,
         true),
-    question: sidebarObjFormat(
-        '질문게시판 관리',
-        'question',
+    anonymous: sidebarObjFormat(
+        '익명게시판 관리',
+        'anonymous',
         [
             columnObjFormat('메인이미지', '', 'img', 'main_img'),
             columnObjFormat('제목', '', 'text', 'title'),
@@ -271,9 +305,9 @@ export const objManagerListContent = {
         [],
         true,
         true),
-    humor: sidebarObjFormat(
-        '유머게시판 관리',
-        'humor',
+    greeting: sidebarObjFormat(
+        '가입인사 관리',
+        'greeting',
         [
             columnObjFormat('메인이미지', '', 'img', 'main_img'),
             columnObjFormat('제목', '', 'text', 'title'),
@@ -287,25 +321,9 @@ export const objManagerListContent = {
         [],
         true,
         true),
-    news: sidebarObjFormat(
-        '마사지소식 관리',
-        'news',
-        [
-            columnObjFormat('메인이미지', '', 'img', 'main_img'),
-            columnObjFormat('제목', '', 'text', 'title'),
-            columnObjFormat('작성자', '', 'text', 'nickname'),
-            columnObjFormat('등록일', '', 'text', 'date'),
-            columnObjFormat('맨위로', '', 'top', 'top'),
-            columnObjFormat('노출여부', '', 'status', 'status'),
-            columnObjFormat('수정', '', 'edit', 'edit'),
-            columnObjFormat('삭제', '', 'delete', 'delete'),
-        ],
-        [],
-        true,
-        true),
-    party: sidebarObjFormat(
-        '파티모집 관리',
-        'party',
+    education: sidebarObjFormat(
+        '창업교육 관리',
+        'education',
         [
             columnObjFormat('메인이미지', '', 'img', 'main_img'),
             columnObjFormat('제목', '', 'text', 'title'),
@@ -334,11 +352,11 @@ export const objManagerListContent = {
             columnObjFormat('삭제', '', 'delete', 'delete'),
         ],
         [],
-        false,
+        true,
         false),
-    shop_event: sidebarObjFormat(
-        '업체이벤트 관리',
-        'shop_event',
+    shop_offer: sidebarObjFormat(
+        '구인구직 관리',
+        'shop_offer',
         [
             columnObjFormat('메인이미지', '', 'img', 'main_img'),
             columnObjFormat('업체이름', '', 'text', 'shop_name'),
@@ -351,7 +369,24 @@ export const objManagerListContent = {
             columnObjFormat('삭제', '', 'delete', 'delete'),
         ],
         [],
-        false,
+        true,
+        false),
+    shop_trade: sidebarObjFormat(
+        '샵매매 관리',
+        'shop_trade',
+        [
+            columnObjFormat('메인이미지', '', 'img', 'main_img'),
+            columnObjFormat('업체이름', '', 'text', 'shop_name'),
+            columnObjFormat('제목', '', 'text', 'title'),
+            columnObjFormat('작성자', '', 'text', 'nickname'),
+            columnObjFormat('등록일', '', 'text', 'date'),
+            columnObjFormat('맨위로', '', 'top', 'top'),
+            columnObjFormat('노출여부', '', 'status', 'status'),
+            columnObjFormat('수정', '', 'edit', 'edit'),
+            columnObjFormat('삭제', '', 'delete', 'delete'),
+        ],
+        [],
+        true,
         false),
     popup: sidebarObjFormat(
         '팝업 관리',
@@ -468,25 +503,7 @@ export const objManagerEditContent = {
 
         ],
     },
-    shop_manager: {
-        schema: 'shop_manager',
-        breadcrumb: '출근부',
-        add_list: [],
-        columns: [//img, select, input, 
-            [
-                editColumnObjFormat('배너이미지 (240x150)', 'img', { field_name: 'city' }, 'img_src'),
-            ],
-            [
-                editColumnObjFormat('도시', 'select', {
-                    api_url: '/api/items?table=shop', option_list: [], use_name_column: 'name', use_val_column: 'pk'
-                }, 'shop_pk'),
-            ],
-            [
-                editColumnObjFormat('이름', 'input', { placeholder: '출근자 이름을 입력해 주세요.' }, 'name'),
-            ],
 
-        ],
-    },
     shop_theme: {
         schema: 'shop_theme',
         breadcrumb: '테마',
@@ -526,23 +543,7 @@ export const objManagerEditContent = {
             ],
         ],
     },
-    request: {
-        schema: 'request',
-        breadcrumb: '문의',
-        add_list: [],
-        update_list: [{ key: 'status', value: '1' }],
-        columns: [//img, select, input, 
-            [
-                editColumnObjFormat('제목', 'input', { disabled: true }, 'title'),
-            ],
-            [
-                editColumnObjFormat('문의사항', 'editor', {}, 'note'),
-            ],
-            [
-                editColumnObjFormat('답변', 'editor', {}, 'reply_note'),
-            ],
-        ],
-    },
+
     home_setting: {
         schema: 'setting',
         breadcrumb: '메인배너',
@@ -606,6 +607,21 @@ export const objManagerEditContent = {
             ],
         ],
     },
+    notice: {
+        schema: 'notice',
+        breadcrumb: '공지사항',
+        columns: [//img, select, input, 
+            [
+                editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
+            ],
+            [
+                editColumnObjFormat('제목', 'input', { placeholder: '제목을 입력해 주세요.' }, 'title'),
+            ],
+            [
+                editColumnObjFormat('내용', 'editor', {}, 'note'),
+            ],
+        ],
+    },
     faq: {
         schema: 'faq',
         breadcrumb: 'FAQ',
@@ -619,9 +635,41 @@ export const objManagerEditContent = {
             ],
         ],
     },
-    notice: {
-        schema: 'notice',
-        breadcrumb: '공지사항',
+    event: {
+        schema: 'event',
+        breadcrumb: '이벤트',
+        columns: [//img, select, input, 
+            [
+                editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
+            ],
+            [
+                editColumnObjFormat('제목', 'input', { placeholder: '제목을 입력해 주세요.' }, 'title'),
+            ],
+            [
+                editColumnObjFormat('내용', 'editor', {}, 'note'),
+            ],
+        ],
+    },
+    request: {
+        schema: 'request',
+        breadcrumb: '문의',
+        add_list: [],
+        update_list: [{ key: 'status', value: '1' }],
+        columns: [//img, select, input, 
+            [
+                editColumnObjFormat('제목', 'input', { disabled: true }, 'title'),
+            ],
+            [
+                editColumnObjFormat('문의사항', 'editor', {}, 'note'),
+            ],
+            [
+                editColumnObjFormat('답변', 'editor', {}, 'reply_note'),
+            ],
+        ],
+    },
+    blog: {
+        schema: 'blog',
+        breadcrumb: '공식블로그',
         columns: [//img, select, input, 
             [
                 editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
@@ -649,9 +697,9 @@ export const objManagerEditContent = {
             ],
         ],
     },
-    question: {
-        schema: 'question',
-        breadcrumb: '질문게시판',
+    anonymous: {
+        schema: 'anonymous',
+        breadcrumb: '익명게시판',
         columns: [//img, select, input, 
             [
                 editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
@@ -664,9 +712,9 @@ export const objManagerEditContent = {
             ],
         ],
     },
-    humor: {
-        schema: 'humor',
-        breadcrumb: '유머게시판',
+    greeting: {
+        schema: 'greeting',
+        breadcrumb: '가입인사',
         columns: [//img, select, input, 
             [
                 editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
@@ -679,9 +727,9 @@ export const objManagerEditContent = {
             ],
         ],
     },
-    news: {
-        schema: 'news',
-        breadcrumb: '마사지소식',
+    education: {
+        schema: 'education',
+        breadcrumb: '창업교육',
         columns: [//img, select, input, 
             [
                 editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
@@ -692,6 +740,25 @@ export const objManagerEditContent = {
             [
                 editColumnObjFormat('내용', 'editor', {}, 'note'),
             ],
+        ],
+    },
+    shop_manager: {
+        schema: 'shop_manager',
+        breadcrumb: '출근부',
+        add_list: [],
+        columns: [//img, select, input, 
+            [
+                editColumnObjFormat('배너이미지 (240x150)', 'img', { field_name: 'city' }, 'img_src'),
+            ],
+            [
+                editColumnObjFormat('업체', 'select', {
+                    api_url: '/api/items?table=shop', option_list: [], use_name_column: 'name', use_val_column: 'pk'
+                }, 'shop_pk'),
+            ],
+            [
+                editColumnObjFormat('이름', 'input', { placeholder: '출근자 이름을 입력해 주세요.' }, 'name'),
+            ],
+
         ],
     },
     shop_review: {
@@ -702,19 +769,9 @@ export const objManagerEditContent = {
                 editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
             ],
             [
-                editColumnObjFormat('제목', 'input', { placeholder: '제목을 입력해 주세요.' }, 'title'),
-            ],
-            [
-                editColumnObjFormat('내용', 'editor', {}, 'note'),
-            ],
-        ],
-    },
-    shop_event: {
-        schema: 'shop_event',
-        breadcrumb: '업체이벤트',
-        columns: [//img, select, input, 
-            [
-                editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
+                editColumnObjFormat('업체', 'select', {
+                    api_url: '/api/items?table=shop', option_list: [], use_name_column: 'name', use_val_column: 'pk'
+                }, 'shop_pk'),
             ],
             [
                 editColumnObjFormat('제목', 'input', { placeholder: '제목을 입력해 주세요.' }, 'title'),
@@ -724,12 +781,37 @@ export const objManagerEditContent = {
             ],
         ],
     },
-    party: {
-        schema: 'party',
-        breadcrumb: '파티모집',
+    shop_offer: {
+        schema: 'shop_offer',
+        breadcrumb: '구인구직',
         columns: [//img, select, input, 
             [
                 editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
+            ],
+            [
+                editColumnObjFormat('업체', 'select', {
+                    api_url: '/api/items?table=shop', option_list: [], use_name_column: 'name', use_val_column: 'pk'
+                }, 'shop_pk'),
+            ],
+            [
+                editColumnObjFormat('제목', 'input', { placeholder: '제목을 입력해 주세요.' }, 'title'),
+            ],
+            [
+                editColumnObjFormat('내용', 'editor', {}, 'note'),
+            ],
+        ],
+    },
+    shop_trade: {
+        schema: 'shop_trade',
+        breadcrumb: '샵매매',
+        columns: [//img, select, input, 
+            [
+                editColumnObjFormat('메인이미지 (150x100)', 'img', { field_name: 'content' }, 'main_img'),
+            ],
+            [
+                editColumnObjFormat('업체', 'select', {
+                    api_url: '/api/items?table=shop', option_list: [], use_name_column: 'name', use_val_column: 'pk'
+                }, 'shop_pk'),
             ],
             [
                 editColumnObjFormat('제목', 'input', { placeholder: '제목을 입력해 주세요.' }, 'title'),

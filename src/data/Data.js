@@ -102,7 +102,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     question: {
@@ -111,7 +111,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     humor: {
@@ -120,7 +120,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     news: {
@@ -129,7 +129,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     party: {
@@ -138,7 +138,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     shop_review: {
@@ -148,7 +148,7 @@ export const objHistoryListContent = {
             columnObjFormat('업체명', '', 'text', 'shop_name'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     s_review: {
@@ -157,7 +157,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     shop_event: {
@@ -167,7 +167,6 @@ export const objHistoryListContent = {
             columnObjFormat('업체명', '', 'text', 'shop_name'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
         ]
     },
     s_event: {
@@ -176,7 +175,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     notice: {
@@ -185,7 +184,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     faq: {
@@ -194,7 +193,7 @@ export const objHistoryListContent = {
             columnObjFormat('제목', '', 'text', 'title'),
             columnObjFormat('작성인', '', 'text', 'nickname'),
             columnObjFormat('등록일', '', 'date', 'date'),
-           
+
         ]
     },
     request: {
