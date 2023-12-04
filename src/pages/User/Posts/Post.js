@@ -52,9 +52,9 @@ const Post = (props) => {
     const [loadingText, setLoadingText] = useState("");
     const viewerRef = useRef();
     const returnTitle = (ttl) => {
-    
+
         return "마사지밤";
-        
+
     }
     useEffect(() => {
         async function isLogined() {
@@ -93,7 +93,7 @@ const Post = (props) => {
                         navigate(-1);
                     }
                 }
-                
+
                 let obj = response.data ?? {};
                 const htmlTitle = document.querySelector("title");
                 htmlTitle.innerText = obj?.title;
@@ -243,7 +243,7 @@ const Post = (props) => {
 
                         {/* {post?.main_img?
                         <>
-                        <img src={backUrl + post?.main_img} style={{ width: '100%', margin: '16px 0' }} alt="#" />
+                        <img src={ post?.main_img} style={{ width: '100%', margin: '16px 0' }} alt="#" />
                         </>
                         :
                         <>
@@ -259,9 +259,9 @@ const Post = (props) => {
                         <div style={{ fontSize: `${theme.size.font4}`, color: `${theme.color.font2}` }}>{post.hash}</div>
                         {post?.pdf_img ?
                             <>
-                            <a href={backUrl+post?.pdf} download={backUrl+post?.pdf} >
-                            <img src={backUrl + post?.pdf_img} style={{ width: '100%', margin: '16px auto', cursor: 'pointer' }} />
-                            </a>
+                                <a href={post?.pdf} download={post?.pdf} >
+                                    <img src={post?.pdf_img} style={{ width: '100%', margin: '16px auto', cursor: 'pointer' }} />
+                                </a>
                             </>
                             :
                             <>

@@ -85,38 +85,38 @@ const Shop = () => {
     const [reviewPageList, setReviewPageList] = useState([]);
     const [user, setUser] = useState({});
     useEffect(() => {
-        
+
         getShop(1, 1);
     }, [])
     function findMetaTag() {
         var metaTags = document.getElementsByTagName('meta');
-      
+
         for (var i = 0; i < metaTags.length; i++) {
-          if (metaTags[i].getAttribute('name') === 'description') {
-            return metaTags[i];
-          }
+            if (metaTags[i].getAttribute('name') === 'description') {
+                return metaTags[i];
+            }
         }
-      
+
         return null; // <meta name='description'> 태그를 찾지 못한 경우
-      }
-      
-      // <meta name='description'> 태그 수정하는 함수
-      function modifyDescription(content) {
+    }
+
+    // <meta name='description'> 태그 수정하는 함수
+    function modifyDescription(content) {
         var metaTag = findMetaTag();
-      
+
         if (metaTag) {
-          metaTag.setAttribute('content', content);
+            metaTag.setAttribute('content', content);
         } else {
-          // <meta name='description'> 태그가 없는 경우, 새로운 <meta> 태그 생성
-          var newMetaTag = document.createElement('meta');
-          newMetaTag.setAttribute('name', 'description');
-          newMetaTag.setAttribute('content', content);
-      
-          // <head> 태그에 새로운 <meta> 태그 추가
-          var headTag = document.getElementsByTagName('head')[0];
-          headTag.appendChild(newMetaTag);
+            // <meta name='description'> 태그가 없는 경우, 새로운 <meta> 태그 생성
+            var newMetaTag = document.createElement('meta');
+            newMetaTag.setAttribute('name', 'description');
+            newMetaTag.setAttribute('content', content);
+
+            // <head> 태그에 새로운 <meta> 태그 추가
+            var headTag = document.getElementsByTagName('head')[0];
+            headTag.appendChild(newMetaTag);
         }
-      }
+    }
     const getShop = async (event_page, review_page) => {
         let page_cut = 10;
         let locate = await getLocation();
@@ -192,7 +192,7 @@ const Shop = () => {
                                             <CardContent>
                                                 <RowContent>
                                                     <Content>
-                                                        <img src={backUrl + data?.shop?.img_src} style={{ width: '100%', borderRadius: '16px' }} alt={data?.shop?.img_src_alt} />
+                                                        <img src={data?.shop?.img_src} style={{ width: '100%', borderRadius: '16px' }} alt={data?.shop?.img_src_alt} />
                                                     </Content>
                                                     <Content>
                                                         <div style={{ fontSize: theme.size.font2_5 }}>{data?.shop?.name}</div>
@@ -224,7 +224,7 @@ const Shop = () => {
                                                             {data?.shop?.option_list && (data?.shop?.option_list ?? []).map((item, idx) => (
                                                                 <>
                                                                     <Row style={{ width: '50%', marginTop: '0.5rem', alignItems: 'center' }}>
-                                                                        <img src={backUrl + item?.img_src} style={{ width: '16px', height: '16px' }} />
+                                                                        <img src={item?.img_src} style={{ width: '16px', height: '16px' }} />
                                                                         <div style={{ marginLeft: '0.5rem' }}>{item?.name}</div>
                                                                     </Row>
                                                                 </>
@@ -311,7 +311,7 @@ const Shop = () => {
                                                         />
                                                     </NaverMap>
                                                 </RenderAfterNavermapsLoaded>
-                                                <img src={backUrl + data?.shop?.price_img} alt={data?.shop?.price_img_alt} style={{ width: '100%', height: 'auto', marginTop: '1rem' }} />
+                                                <img src={data?.shop?.price_img} alt={data?.shop?.price_img_alt} style={{ width: '100%', height: 'auto', marginTop: '1rem' }} />
                                             </CardContent>
                                         </Card>
                                     </Grid>

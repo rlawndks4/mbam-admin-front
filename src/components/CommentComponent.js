@@ -44,7 +44,7 @@ const CommentContent = (props) => {
                     effect="blur"
                     height={64}
                     width={64}
-                    src={item?.profile_img ? (item?.profile_img?.substring(0, 4) == 'http' ? item.profile_img.replaceAll("http://", "https://") : backUrl + item.profile_img) : defaultImg} // use normal <img> attributes as props
+                    src={item?.profile_img ? (item?.profile_img?.substring(0, 4) == 'http' ? item.profile_img.replaceAll("http://", "https://") : item.profile_img) : defaultImg} // use normal <img> attributes as props
                     style={{ borderRadius: '50%' }}
                     onError={defaultImg} />
                 <div style={{ marginLeft: '16px' }}>

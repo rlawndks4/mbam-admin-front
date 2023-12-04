@@ -134,7 +134,7 @@ const Home = () => {
             let banner_link_list = [];
             for (var i = 1; i <= 5; i++) {
                 if (response?.data?.banner[`home_banner_img_${i}`]) {
-                    await banner_list.push(`${backUrl + response?.data?.banner[`home_banner_img_${i}`]}`);
+                    await banner_list.push(`${response?.data?.banner[`home_banner_img_${i}`]}`);
                     await banner_link_list.push(`${response?.data?.banner[`home_banner_link_${i}`]}`);
 
                 }
@@ -217,7 +217,7 @@ const Home = () => {
                         <RowContent style={{ flexWrap: 'wrap' }}>
                             {cityList && cityList.map((item, idx) => (
                                 <>
-                                    <CityCard src={backUrl + item?.img_src} idx={idx} onClick={() => {
+                                    <CityCard src={item?.img_src} idx={idx} onClick={() => {
                                         navigate(`/shop-list?city=${item?.pk}`)
                                     }} />
                                 </>

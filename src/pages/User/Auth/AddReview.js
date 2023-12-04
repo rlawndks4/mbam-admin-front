@@ -135,8 +135,8 @@ const AddReview = () => {
                                     console.log(e)
                                     if (e.includes('<img src="') && e.includes('base64,')) {
                                         let base64_list = e.split('<img src="');
-                                        for(var i=0;i< base64_list.length;i++){
-                                            if(base64_list[i].includes('base64,')){
+                                        for (var i = 0; i < base64_list.length; i++) {
+                                            if (base64_list[i].includes('base64,')) {
                                                 let img_src = base64_list[i];
                                                 img_src = await img_src.split(`"></p>`);
                                                 let base64 = img_src[0];
@@ -144,7 +144,7 @@ const AddReview = () => {
                                                 let formData = new FormData();
                                                 await formData.append('note', img_src);
                                                 const { data: response } = await axios.post('/api/addimageitems', formData);
-                                                note = await note.replace(base64, `${backUrl + response?.data[0]?.filename}`)
+                                                note = await note.replace(base64, `${response?.data[0]?.filename}`)
                                             }
                                         }
                                     }

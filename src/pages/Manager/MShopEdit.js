@@ -69,7 +69,7 @@ const MShopEdit = () => {
                 const { data: z_sub_city } = await axios.get(`/api/items?table=sub_city`);
                 let sub_city_list = [...z_sub_city.data];
                 for (var i = 0; i < sub_city_list.length; i++) {
-                    if(sub_city_obj[sub_city_list[i]?.city_pk]){
+                    if (sub_city_obj[sub_city_list[i]?.city_pk]) {
                         sub_city_obj[sub_city_list[i]?.city_pk].push(sub_city_list[i]);
                     }
                 }
@@ -85,8 +85,8 @@ const MShopEdit = () => {
                     const { data: response } = await axios.get(`/api/item?table=shop&pk=${params.pk}`)
                     sub_city_list = sub_city_obj[response?.data?.city_pk];
                     setSubCityList(sub_city_list);
-                    setUrl(backUrl + response?.data?.img_src)
-                    setPriceUrl(backUrl + response?.data?.price_img)
+                    setUrl(response?.data?.img_src)
+                    setPriceUrl(response?.data?.price_img)
                     $('.name').val(response.data.name)
                     $('.sub_name').val(response.data.sub_name)
                     $('.description').val(response.data.description)
@@ -520,7 +520,7 @@ const MShopEdit = () => {
                                                     let formData = new FormData();
                                                     await formData.append('note', img_src);
                                                     const { data: response } = await axios.post('/api/addimageitems', formData);
-                                                    note = await note.replace(base64, `${backUrl + response?.data[0]?.filename}`)
+                                                    note = await note.replace(base64, `${response?.data[0]?.filename}`)
                                                 }
                                             }
                                         }
@@ -615,7 +615,7 @@ const MShopEdit = () => {
                                                     let formData = new FormData();
                                                     await formData.append('note', img_src);
                                                     const { data: response } = await axios.post('/api/addimageitems', formData);
-                                                    note = await note.replace(base64, `${backUrl + response?.data[0]?.filename}`)
+                                                    note = await note.replace(base64, `${response?.data[0]?.filename}`)
                                                 }
                                             }
                                         }
@@ -652,7 +652,7 @@ const MShopEdit = () => {
                                                     let formData = new FormData();
                                                     await formData.append('note', img_src);
                                                     const { data: response } = await axios.post('/api/addimageitems', formData);
-                                                    note = await note.replace(base64, `${backUrl + response?.data[0]?.filename}`)
+                                                    note = await note.replace(base64, `${response?.data[0]?.filename}`)
                                                 }
                                             }
                                         }
