@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
 import styled from 'styled-components'
-import { backUrl } from '../../data/Data'
+import { backUrl, communityCategoryList } from '../../data/Data'
 import { BiEditAlt } from 'react-icons/bi'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import { CgToggleOn, CgToggleOff } from 'react-icons/cg'
@@ -16,6 +16,7 @@ import { useEffect } from 'react'
 import { GiCancel } from 'react-icons/gi'
 import $ from 'jquery'
 import { RiMoneyDollarCircleLine } from 'react-icons/ri'
+import _ from 'lodash'
 const Tr = styled.tr`
 box-shadow:1px 1px 1px #00000029;
 font-size:14px;
@@ -173,6 +174,13 @@ const DataTr = ({ id, data, index, moveCard, column, schema, list, sort, obj, op
                         {col.type == 'link' ?
                             <>
                                 <Td style={{ width: `${col.width}%`, cursor: 'pointer', textDecoration: 'underline' }} onClick={() => { window.open(data[`${col.column}`]) }}>{data[`${col.column}`]}</Td>
+                            </>
+                            :
+                            <>
+                            </>}
+                        {col.type == 'en_to_post_category' ?
+                            <>
+                                <Td style={{ width: `${col.width}%` }}>{_.find(communityCategoryList, { table: data[`${col.column}`] })?.name}</Td>
                             </>
                             :
                             <>

@@ -15,14 +15,6 @@ import theme from '../../styles/theme';
 import { Row, Select, Input } from '../../components/elements/ManagerTemplete';
 import { objManagerListContent } from '../../data/Manager/ManagerContentData';
 import $ from 'jquery';
-import { AiOutlineSearch } from 'react-icons/ai'
-import { SiMicrosoftexcel } from 'react-icons/si'
-import * as FileSaver from "file-saver";
-import * as XLSX from "xlsx";
-import { returnColumn } from '../../common/manager/ColumnType';
-import SideBar from '../../common/manager/SideBar';
-import ManagerWrappers from '../../components/elements/ManagerWrappers';
-import ManagerContentWrappers from '../../components/elements/ManagerContentWrappers';
 import OptionBox from './OptionBox';
 const OptionCardWrappers = styled.div`
 width:95%;
