@@ -85,6 +85,8 @@ const MItemList = () => {
         obj['page'] = num ?? 1;
         obj['page_cut'] = $('.page-cut').val();
         obj['keyword'] = $('.search').val();
+        console.log(params)
+
         if (objManagerListContent[`${params.table}`].is_move) {
             obj['order'] = 'sort';
         }
