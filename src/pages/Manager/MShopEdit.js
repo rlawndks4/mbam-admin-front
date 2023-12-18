@@ -89,6 +89,7 @@ const MShopEdit = () => {
                     setPriceUrl(response?.data?.price_img)
                     $('.name').val(response.data.name)
                     $('.sub_name').val(response.data.sub_name)
+                    $('.dong').val(response.data.dong)
                     $('.description').val(response.data.description)
                     $('.city_1').val(response.data.city_1)
                     $('.city_2').val(response.data.city_2)
@@ -203,6 +204,7 @@ const MShopEdit = () => {
             let obj = {
                 name: $(`.name`).val(),
                 sub_name: $(`.sub_name`).val(),
+                dong: $(`.dong`).val(),
                 description: $(`.description`).val(),
                 city_1: $(`.city_1`).val(),
                 city_2: $(`.city_2`).val(),
@@ -407,6 +409,10 @@ const MShopEdit = () => {
                                 </>
                             ))}
                         </Select>
+                    </Col>
+                    <Col>
+                        <Title style={{ margintop: '32px' }}>동</Title>
+                        <Input className='dong' />
                     </Col>
                     <Col>
                         <Title style={{ margintop: '32px' }}>테마</Title>
