@@ -29,6 +29,7 @@ const Td = styled.td`
 text-align:center;
 padding:14px 0;
 margin-bottom:6px;
+font-size: 14px;
 `
 const DataTable = (props) => {
     const { column, data, schema, opTheTopItem, changeItemSequence, deleteItem, changeStatus, width } = props;
@@ -82,12 +83,12 @@ const DataTable = (props) => {
 
     return (
         <>
-            <div style={{ marginBottom: '16px',width:`${width?'95%':'100%'}`,margin:'0 auto', overflowX: 'auto' }} className='scroll-table'>
+            <div style={{ marginBottom: '16px', width: `${width ? '95%' : '100%'}`, margin: '0 auto', overflowX: 'auto' }} className='scroll-table'>
                 <Table style={{ width: `${width ? width : ''}` }}>
                     <Tr style={{ fontWeight: 'bold', background: `${theme.color.manager.background1}18`, fontSize: '16px' }}>
                         {column.map((item, index) => (
                             <>
-                                <Td key={index} style={{ width: `${item.width}%` }}>{item.name}</Td>
+                                <Td key={index} style={{ width: `${item.width}%`, borderLeft: `${index != 0 ? '1px solid #ccc' : ''}` }}>{item.name}</Td>
                             </>
                         ))}
                     </Tr>

@@ -21,6 +21,7 @@ export const zSidebar = [
     ], <AiTwotoneSetting />),
     sidebarContentFormat('기본설정', [
         sidebarObjListFormat('메인배너', '/manager/edit/home_setting/1', 40, ['/manager/edit/home_setting/1']),//list
+        sidebarObjListFormat('프리미엄업체배너', '/manager/edit/shop_banner_setting/1', 40, ['/manager/edit/shop_banner_setting/1']),//list
         sidebarObjListFormat('메인페이지세팅', '/manager/edit/main_setting/1', 40, ['/manager/edit/main_setting/1']),//list
         sidebarObjListFormat('메타세팅', '/manager/edit/meta_setting/1', 40, ['/manager/edit/meta_setting/1']),//
         sidebarObjListFormat('팝업관리', '/manager/list/popup', 40, ['/manager/list/popup']),//list
@@ -159,6 +160,10 @@ export const objManagerListContent = {
             columnObjFormat('노출여부', '', 'status', 'status'),
             columnObjFormat('프리미엄여부', '', 'status', 'is_premium'),
             columnObjFormat('추천업체여부', '', 'status', 'is_recommend'),
+            columnObjFormat('실시간샵검색랭킹', '', 'number', 'real_time_rank'),
+            columnObjFormat('실시간핫플레이스샵랭킹', '', 'number', 'hot_place_rank'),
+            columnObjFormat('하루할당점프갯수', '', 'number', 'daily_jump_count'),
+            columnObjFormat('하루사용점프갯수', '', 'number', 'use_jump_count'),
             columnObjFormat('출근부관리', '', 'shop_manager_list', 'shop_manager_list'),
             columnObjFormat('생성일', '', 'text', 'date'),
             columnObjFormat('수정', '', 'edit', 'edit'),
@@ -166,7 +171,8 @@ export const objManagerListContent = {
         ],
         [],
         true,
-        false),
+        false,
+        '120%'),
     shop_manager: sidebarObjFormat(
         '출근부 관리',
         'shop_manager',
@@ -601,6 +607,73 @@ export const objManagerEditContent = {
             ],
         ],
     },
+    shop_banner_setting: {
+        schema: 'setting',
+        breadcrumb: '프리미엄업체배너',
+        add_list: [],
+        columns: [//img, select, input, 
+            [
+                editColumnObjFormat('슬라이드 이미지 1 (400x200)', 'img', { field_name: 'content1' }, 'shop_banner_img_1'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_1'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 2 (400x200)', 'img', { field_name: 'content2' }, 'shop_banner_img_2'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_2'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 3 (400x200)', 'img', { field_name: 'content3' }, 'shop_banner_img_3'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_3'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 4 (400x200)', 'img', { field_name: 'content4' }, 'shop_banner_img_4'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_4'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 5 (400x200)', 'img', { field_name: 'content1' }, 'shop_banner_img_5'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_5'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 6 (400x200)', 'img', { field_name: 'content1' }, 'shop_banner_img_6'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_6'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 7 (400x200)', 'img', { field_name: 'content1' }, 'shop_banner_img_7'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_7'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 8 (400x200)', 'img', { field_name: 'content1' }, 'shop_banner_img_8'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_8'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 9 (400x200)', 'img', { field_name: 'content1' }, 'shop_banner_img_9'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_9'),
+            ],
+            [
+                editColumnObjFormat('슬라이드 이미지 10 (400x200)', 'img', { field_name: 'content1' }, 'shop_banner_img_10'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'shop_banner_link_10'),
+            ],
+        ],
+    },
     main_setting: {
         schema: 'setting',
         breadcrumb: '메인페이지세팅',
@@ -779,7 +852,10 @@ export const objManagerEditContent = {
                 editColumnObjFormat('이름', 'input', { placeholder: '출근자 이름을 입력해 주세요.' }, 'name'),
             ],
             [
-                editColumnObjFormat('간단한설명', 'input', { placeholder: 'ex) 근무시간 00:00~03:00' }, 'comment'),
+                editColumnObjFormat('설명', 'input', { placeholder: '' }, 'comment'),
+            ],
+            [
+                editColumnObjFormat('근무시간', 'input', { placeholder: 'ex) 근무시간 00:00~03:00' }, 'work_time'),
             ],
         ],
     },

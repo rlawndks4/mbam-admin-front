@@ -94,6 +94,7 @@ const MShopEdit = () => {
                     $('.city_1').val(response.data.city_1)
                     $('.city_2').val(response.data.city_2)
                     $('.img_src_alt').val(response.data.img_src_alt)
+                    $('.end_date').val(response.data.end_date)
                     $('.price_img_alt').val(response.data.price_img_alt)
                     $('.price_img_link').val(response.data.price_img_link)
                     $('.hash').val(response.data.hash)
@@ -104,6 +105,9 @@ const MShopEdit = () => {
                     $('.address').val(response.data.address)
                     $('.address_detail').val(response.data.address_detail)
                     $('.show_address').val(response.data.show_address)
+                    $('.real_time_rank').val(response.data.real_time_rank)
+                    $('.hot_place_rank').val(response.data.hot_place_rank)
+                    $('.daily_jump_count').val(response.data.daily_jump_count)
                     $('.lng').val(response.data.lng)
                     $('.lat').val(response.data.lat)
                     setNote(response?.data?.note);
@@ -209,6 +213,7 @@ const MShopEdit = () => {
                 city_1: $(`.city_1`).val(),
                 city_2: $(`.city_2`).val(),
                 img_src_alt: $(`.img_src_alt`).val(),
+                end_date: $(`.end_date`).val(),
                 price_img_alt: $(`.price_img_alt`).val(),
                 price_img_link: $(`.price_img_link`).val(),
                 hash: $(`.hash`).val(),
@@ -220,6 +225,9 @@ const MShopEdit = () => {
                 address: $(`.address`).val(),
                 address_detail: $(`.address_detail`).val(),
                 show_address: $(`.show_address`).val(),
+                real_time_rank: $(`.real_time_rank`).val() ?? 0,
+                hot_place_rank: $(`.hot_place_rank`).val() ?? 0,
+                daily_jump_count: $(`.daily_jump_count`).val() ?? 0,
                 lng: $(`.lng`).val(),
                 lat: $(`.lat`).val(),
                 table: 'shop',
@@ -351,6 +359,24 @@ const MShopEdit = () => {
                     <Col>
                         <Title style={{ margintop: '32px' }}>메인이미지 알트내용</Title>
                         <Input className='img_src_alt' />
+                    </Col>
+                    <Col>
+                        <Title style={{ margintop: '32px' }}>제휴만료일</Title>
+                        <Input className='end_date' type='date' />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Title style={{ margintop: '32px' }}>실시간 샵 검색 랭킹</Title>
+                        <Input className='real_time_rank' />
+                    </Col>
+                    <Col>
+                        <Title style={{ margintop: '32px' }}>실시간 핫플레이스 샵 랭킹</Title>
+                        <Input className='hot_place_rank' />
+                    </Col>
+                    <Col>
+                        <Title style={{ margintop: '32px' }}>하루 할당 점프갯수</Title>
+                        <Input className='daily_jump_count' />
                     </Col>
                 </Row>
                 <Row>
