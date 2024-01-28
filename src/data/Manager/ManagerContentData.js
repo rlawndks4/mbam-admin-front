@@ -605,6 +605,12 @@ export const objManagerEditContent = {
             [
                 editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'home_banner_link_5'),
             ],
+            [
+                editColumnObjFormat('왼쪽이미지', 'img', { field_name: 'content1' }, 'home_left_img'),
+            ],
+            [
+                editColumnObjFormat('링크', 'input', { placeholder: '/home' }, 'home_left_link'),
+            ],
         ],
     },
     shop_banner_setting: {
