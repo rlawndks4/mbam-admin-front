@@ -106,6 +106,7 @@ const MShopEdit = () => {
                     $('.address_detail').val(response.data.address_detail)
                     $('.show_address').val(response.data.show_address)
                     $('.real_time_rank').val(response.data.real_time_rank)
+                    $('.work_time').val(response.data.work_time)
                     $('.hot_place_rank').val(response.data.hot_place_rank)
                     $('.daily_jump_count').val(response.data.daily_jump_count)
                     $('.lng').val(response.data.lng)
@@ -226,6 +227,7 @@ const MShopEdit = () => {
                 address_detail: $(`.address_detail`).val(),
                 show_address: $(`.show_address`).val(),
                 real_time_rank: $(`.real_time_rank`).val() ?? 0,
+                work_time: $(`.work_time`).val() ?? "",
                 hot_place_rank: $(`.hot_place_rank`).val() ?? 0,
                 daily_jump_count: $(`.daily_jump_count`).val() ?? 0,
                 lng: $(`.lng`).val(),
@@ -413,6 +415,10 @@ const MShopEdit = () => {
                     <Col>
                         <Title style={{ margintop: '32px' }}>업체 전화번호</Title>
                         <Input className='phone' />
+                    </Col>
+                    <Col>
+                        <Title style={{ margintop: '32px' }}>업체 영업시간</Title>
+                        <Input className='work_time' />
                     </Col>
                 </Row>
                 <Row>
