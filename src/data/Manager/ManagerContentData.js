@@ -508,6 +508,12 @@ export const objManagerEditContent = {
             [
                 editColumnObjFormat('도시명', 'input', { placeholder: '도시명을 입력해 주세요.' }, 'name'),
             ],
+            [
+                editColumnObjFormat('메타타이틀', 'input', { placeholder: '' }, 'meta_title'),
+            ],
+            [
+                editColumnObjFormat('메타디스크립션', 'input', { placeholder: '' }, 'meta_description'),
+            ],
         ],
     },
     sub_city: {
