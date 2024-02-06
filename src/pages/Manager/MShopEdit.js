@@ -99,6 +99,8 @@ const MShopEdit = () => {
                     $('.price_img_link').val(response.data.price_img_link)
                     $('.hash').val(response.data.hash)
                     $('.phone').val(response.data.phone)
+                    $('.kakao').val(response.data.kakao)
+                    $('.line').val(response.data.line)
                     $('.city_pk').val(response.data.city_pk)
                     $('.theme_pk').val(response.data.theme_pk)
                     $('.zip_code').val(response.data.zip_code)
@@ -219,6 +221,8 @@ const MShopEdit = () => {
                 price_img_link: $(`.price_img_link`).val(),
                 hash: $(`.hash`).val(),
                 phone: $(`.phone`).val(),
+                kakao: $(`.kakao`).val(),
+                line: $(`.line`).val(),
                 city_pk: $(`.city_pk`).val(),
                 sub_city_pk: $(`.sub_city_pk`).val(),
                 theme_pk: $(`.theme_pk`).val(),
@@ -415,6 +419,14 @@ const MShopEdit = () => {
                     <Col>
                         <Title style={{ margintop: '32px' }}>업체 전화번호</Title>
                         <Input className='phone' />
+                    </Col>
+                    <Col>
+                        <Title style={{ margintop: '32px' }}>업체 카카오</Title>
+                        <Input className='kakao' />
+                    </Col>
+                    <Col>
+                        <Title style={{ margintop: '32px' }}>업체 라인</Title>
+                        <Input className='line' />
                     </Col>
                     <Col>
                         <Title style={{ margintop: '32px' }}>업체 영업시간</Title>
